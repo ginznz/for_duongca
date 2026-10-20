@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Gửi Thùy Dương 💌</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink-50:#fff4f9; --pink-100:#ffe0ee; --pink-200:#ffc6df; --pink-300:#ffa3cb;
+    --pink-500:#ff6aa9; --pink-700:#e0438a; --ink:#8a2b5a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{
+    font-family:'Baloo 2',system-ui,sans-serif;color:var(--ink);
+    background:
+      radial-gradient(circle at 20% 15%,#fff 0 2px,transparent 3px) 0 0/46px 46px,
+      radial-gradient(circle at 70% 60%,#ffe9f3 0 3px,transparent 4px) 0 0/60px 60px,
+      linear-gradient(165deg,#ffe8f2 0%,#ffcfe4 50%,#ffb6d6 100%);
+    display:flex;align-items:center;justify-content:center;
+    min-height:100dvh;padding:16px;overflow:hidden;position:relative;
+  }
+  .bg-heart{position:fixed;bottom:-40px;opacity:.6;animation:floatUp linear infinite;pointer-events:none;z-index:0}
+  @keyframes floatUp{to{transform:translateY(-115vh) rotate(30deg);opacity:0}}
+
+  /* màn mở thư */
+  #envelope{position:relative;z-index:2;text-align:center;cursor:pointer}
+  .env{font-size:110px;display:inline-block;animation:wiggle 1.8s ease-in-out infinite;filter:drop-shadow(0 10px 16px rgba(224,67,138,.3))}
+  @keyframes wiggle{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg) scale(1.05)}}
+  .to{font-family:'Dancing Script',cursive;font-size:38px;color:var(--pink-700);margin-top:6px}
+  .tap{margin-top:8px;font-size:16px;background:#fff;border-radius:999px;padding:6px 16px;display:inline-block;box-shadow:0 6px 14px rgba(224,67,138,.2);animation:blink 1.2s ease-in-out infinite}
+  @keyframes blink{50%{opacity:.55}}
+
+  .card{
+    position:relative;z-index:1;width:100%;max-width:380px;display:none;
+    background:rgba(255,255,255,.92);border-radius:36px;padding:26px 20px 26px;text-align:center;
+    box-shadow:0 20px 44px rgba(224,67,138,.28);border:3px dashed var(--pink-300);
+  }
+  .card::before,.card::after{content:'🎀';position:absolute;top:-22px;font-size:40px}
+  .card::before{left:18px;transform:rotate(-18deg)}
+  .card::after{right:18px;transform:rotate(18deg)}
+
+  .hello{font-family:'Dancing Script',cursive;font-size:30px;color:var(--pink-500)}
+  .mascot{position:relative;display:inline-block;margin-top:4px}
+  .face{font-size:86px;line-height:1;display:inline-block;animation:bounce 1.6s ease-in-out infinite}
+  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .blush{position:absolute;bottom:14px;width:18px;height:10px;border-radius:50%;background:#ff8fbf;opacity:.55;filter:blur(2px)}
+  .blush.l{left:4px}.blush.r{right:4px}
+  .spark{position:absolute;font-size:20px;animation:twinkle 1.5s ease-in-out infinite}
+  .spark.a{top:-4px;left:-20px}.spark.b{top:8px;right:-24px;animation-delay:.6s}
+  @keyframes twinkle{50%{transform:scale(.5);opacity:.3}}
+
+  h1{font-size:25px;font-weight:800;margin:10px 0 8px;color:var(--pink-700);line-height:1.3}
+  .bubble{
+    position:relative;display:inline-block;background:var(--pink-100);border-radius:18px;
+    padding:8px 14px;font-size:16px;min-height:40px;max-width:100%;
+  }
+  .bubble::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);
+    border:8px solid transparent;border-top:0;border-bottom-color:var(--pink-100)}
+
+  .btns{position:relative;margin-top:18px;height:150px;display:flex;align-items:center;justify-content:center;gap:14px}
+  button{font-family:inherit;font-weight:800;border:none;cursor:pointer;border-radius:999px;
+    transition:transform .3s cubic-bezier(.34,1.56,.64,1),opacity .3s,left .35s ease,top .35s ease}
+  #yes{
+    background:linear-gradient(135deg,var(--pink-500),var(--pink-700));color:#fff;
+    font-size:20px;padding:14px 26px;box-shadow:0 8px 18px rgba(224,67,138,.4);
+    animation:pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{box-shadow:0 8px 18px rgba(224,67,138,.4)}50%{box-shadow:0 8px 30px rgba(255,106,169,.8)}}
+  #no{background:#fff;color:var(--pink-700);border:2px solid var(--pink-300);font-size:18px;padding:12px 22px}
+  #no.run{position:absolute}
+  .shake{animation:shake .4s}
+  @keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+
+  .hearts{margin-top:6px;font-size:22px;letter-spacing:4px;min-height:30px}
+  .hearts span{transition:opacity .3s,filter .3s}
+  .hearts .broken{filter:grayscale(1);opacity:.45}
+
+  /* màn đồng ý */
+  #done .face{font-size:92px}
+  .ticket{
+    margin:16px auto 0;background:var(--pink-50);border:2px solid var(--pink-300);
+    border-radius:22px;padding:12px 14px;text-align:left;position:relative;
+  }
+  .ticket .stamp{position:absolute;top:-14px;right:12px;background:var(--pink-700);color:#fff;font-size:13px;
+    padding:3px 10px;border-radius:999px;transform:rotate(6deg)}
+  .row{display:flex;align-items:center;gap:12px;padding:9px 4px;font-size:17px}
+  .row + .row{border-top:1px dashed var(--pink-300)}
+  .row b{color:var(--pink-700)}
+  .ic{font-size:26px;width:34px;text-align:center}
+  .sign{font-family:'Dancing Script',cursive;font-size:26px;color:var(--pink-500);margin-top:14px}
+  .note{font-size:15px;opacity:.85;margin-top:2px}
+
+  .confetti{position:fixed;top:-30px;pointer-events:none;z-index:5;animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+  .pop{animation:pop .55s cubic-bezier(.34,1.56,.64,1)}
+  @keyframes pop{0%{transform:scale(.5);opacity:0}100%{transform:scale(1);opacity:1}}
+</style>
+</head>
+<body>
+
+<!-- Phong thư mở đầu -->
+<div id="envelope">
+  <div class="env">💌</div>
+  <div class="to">Gửi Thùy Dương</div>
+  <div class="tap">Chạm để mở thư nha 👆</div>
+</div>
+
+<!-- Câu hỏi -->
+<div class="card" id="ask">
+  <div class="hello">Hí Thùy Dương ~</div>
+  <div class="mascot">
+    <span class="spark a">✨</span>
+    <div class="face" id="face">🐰</div>
+    <span class="blush l"></span><span class="blush r"></span>
+    <span class="spark b">💫</span>
+  </div>
+  <h1>Tối nay em iu đi hẹn hò với anh hông? 🥺👉👈</h1>
+  <div class="bubble" id="sub">Anh hồi hộp lắm đó, trả lời nhẹ nhàng thôi nha~</div>
+  <div class="btns" id="btns">
+    <button id="yes">Đồng ý 💖</button>
+    <button id="no">Hông 😤</button>
+  </div>
+  <div class="hearts" id="hearts"><span>💗</span><span>💗</span><span>💗</span><span>💗</span></div>
+</div>
+
+<!-- Đồng ý -->
+<div class="card" id="done">
+  <div class="hello">Yayyy Thùy Dương ơi!</div>
+  <div class="mascot"><span class="spark a">✨</span><div class="face">🥰</div><span class="spark b">🎉</span></div>
+  <h1>Biết ngay em sẽ đồng ý mà 💘</h1>
+  <div class="ticket">
+    <span class="stamp">Vé hẹn hò 🎟️</span>
+    <div class="row"><span class="ic">⏰</span><span><b>19:00</b> tối nay</span></div>
+    <div class="row"><span class="ic">📍</span><span>Anh đón em tại <b>sảnh nhaaa</b></span></div>
+    <div class="row"><span class="ic">🎀</span><span>Chỉ cần mang theo nụ cười xinh xinh</span></div>
+  </div>
+  <div class="sign">Hẹn gặp nàng nha 🫶</div>
+  <p class="note">Xuống là có anh đợi rồi, em iu cứ thong thả nhé~</p>
+</div>
+
+<script>
+  const bgItems=['💗','💖','💕','🩷','🌸','🎀','✨'];
+  for(let i=0;i<16;i++){
+    const h=document.createElement('div');
+    h.className='bg-heart';
+    h.textContent=bgItems[i%bgItems.length];
+    h.style.left=Math.random()*100+'vw';
+    h.style.fontSize=(16+Math.random()*18)+'px';
+    h.style.animationDuration=(7+Math.random()*7)+'s';
+    h.style.animationDelay=(-Math.random()*12)+'s';
+    document.body.appendChild(h);
+  }
+
+  function rain(items,n){
+    for(let i=0;i<n;i++){
+      setTimeout(()=>{
+        const c=document.createElement('div');
+        c.className='confetti';
+        c.textContent=items[Math.floor(Math.random()*items.length)];
+        c.style.left=Math.random()*100+'vw';
+        c.style.fontSize=(18+Math.random()*16)+'px';
+        c.style.animationDuration=(2.5+Math.random()*2)+'s';
+        document.body.appendChild(c);
+        setTimeout(()=>c.remove(),5000);
+      },i*40);
+    }
+  }
+
+  const envelope=document.getElementById('envelope');
+  const ask=document.getElementById('ask');
+  envelope.addEventListener('click',()=>{
+    envelope.style.display='none';
+    ask.style.display='block';
+    ask.classList.add('pop');
+    rain(['🌸','💗','✨'],18);
+  });
+
+  const yes=document.getElementById('yes');
+  const no=document.getElementById('no');
+  const sub=document.getElementById('sub');
+  const face=document.getElementById('face');
+  const btns=document.getElementById('btns');
+  const hearts=document.querySelectorAll('#hearts span');
+
+  const steps=[
+    {face:'🐰💧', text:'Ơ... Em iu bấm nhầm đúng hông? 🥲'},
+    {face:'🐱😿', text:'Thỏ con buồn xỉu luôn rồi nè em ơi 💔'},
+    {face:'🐻🙏', text:'Nút "Hông" bị hư rồi, em thử lại nha 🙃'},
+    {face:'🐰🥹', text:'Thôi, giờ em chỉ còn 1 lựa chọn thôi nhé 😌'}
+  ];
+  let count=0, yesScale=1;
+
+  function moveNo(){
+    const area=btns.getBoundingClientRect();
+    const b=no.getBoundingClientRect();
+    no.classList.add('run');
+    no.style.left=Math.random()*Math.max(0,area.width-b.width)+'px';
+    no.style.top=Math.random()*Math.max(0,area.height-b.height)+'px';
+  }
+
+  no.addEventListener('click',()=>{
+    const s=steps[count];
+    hearts[hearts.length-1-count].textContent='💔';
+    hearts[hearts.length-1-count].classList.add('broken');
+    count++;
+    face.textContent=s.face;
+    sub.textContent=s.text;
+    ask.classList.remove('shake','pop'); void ask.offsetWidth; ask.classList.add('shake');
+    if(navigator.vibrate) navigator.vibrate(80);
+
+    yesScale+=0.18;
+    yes.style.transform=`scale(${yesScale})`;
+    no.style.transform=`scale(${Math.max(0.55,1-count*0.12)})`;
+
+    if(count>=4){
+      no.style.opacity='0';
+      setTimeout(()=>no.remove(),300);
+      yes.textContent='Đồng ý luôn 💖';
+    }else{
+      moveNo();
+    }
+  });
+
+  yes.addEventListener('click',()=>{
+    ask.style.display='none';
+    const done=document.getElementById('done');
+    done.style.display='block';
+    done.classList.add('pop');
+    if(navigator.vibrate) navigator.vibrate([60,40,60]);
+    rain(['💖','💕','🎀','🌸','✨','💘','🩷','🐰'],70);
+  });
+</script>
+</body>
+</html>
